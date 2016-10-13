@@ -1,1 +1,1 @@
-# MTCK-NDVI
+# MCTK-NDVI
