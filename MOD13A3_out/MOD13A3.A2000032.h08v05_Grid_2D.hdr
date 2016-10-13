@@ -1,0 +1,18 @@
+ENVI
+description = {
+  ENVI File, Created [Wed Oct 12 22:57:35 2016]}
+samples = 1200
+lines   = 1200
+bands   = 1
+header offset = 0
+file type = ENVI Standard
+data type = 4
+interleave = bsq
+sensor type = Unknown
+byte order = 0
+map info = {Sinusoidal, 1.0000, 1.0000, -11119505.1967, 4447802.0787, 9.2662543306e+002, 9.2662543306e+002, D_Unknown, units=Meters}
+projection info = {16, 6371007.2, 0.000000, 0.0, 0.0, D_Unknown, Sinusoidal, units=Meters}
+coordinate system string = {PROJCS["Sinusoidal",GEOGCS["GCS_Unknown",DATUM["D_Unknown",SPHEROID["S_Unknown",6371007.181,0.0]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Sinusoidal"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",0.0],UNIT["Meter",1.0]]}
+wavelength units = Unknown
+band names = {
+ 1 km monthly NDVI}
