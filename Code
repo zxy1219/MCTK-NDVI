@@ -1,0 +1,43 @@
+*Idl code
+
+
+pro batch_ndvi_mctk
+  compile_opt idl2
+
+  ENVI, /RESTORE_BASE_SAVE_FILES
+  ENVI_BATCH_INIT
+
+  modis_swath_file = 'C:\Desktop\Infill\AOD\NDVI\NDVI_data\2000\MOD13A3\MOD13A3.A2000032.h08v05.006.2015138123531.hdf'
+
+  ;The specified output location MUST end in the appropriate path
+  ;separator for your OS
+  output_location = 'C:\Desktop\Infill\AOD\NDVI\NDVI_data\2000\MOD13A3_out2\'
+
+  output_rootname = 'MOD13A3.A2000032.h08v05'
+
+  swath_name = 'mod13'
+  grid_name = 'MOD_Grid_monthly_1km_VI'
+  sd_names = ['1 km monthly NDVI']
+
+  ;Output method schema is:
+  ;0 = Standard, 1 = Projected, 2 = Standard and Projected
+  out_method = 1
+
+  output_projection = envi_proj_create(/geographic)
+
+  ;Choosing nearest neighbor interpolation
+  interpolation_method = 0
+
+  ;do not put the bridge creation/destruction code inside a loop
+  bridges = mctk_create_bridges()
+
+  convert_modis_data, in_file=modis_swath_file,out_path=output_location, out_root=output_rootname, $
+    swt_name=swath_name, sd_names=sd_names, $
+    out_method=out_method, out_proj=output_projection, $
+    interp_method=interpolation_method, /no_msg, $
+    r_fid_array=r_fid_array, r_fname_array=r_fname_array, $
+    bridges=bridges, msg=msg
+
+  mctk_destroy_bridges, bridges
+
+end
