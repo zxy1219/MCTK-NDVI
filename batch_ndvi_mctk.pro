@@ -54,8 +54,6 @@ PRO BATCH_NDVI_MCTK
     out_method=out_method, out_proj=output_projection, interp_method=interpolation_method, $
     r_fid_array=r_fid_array, r_fname_array=r_fname_array, msg=msg
 
-  PRINT, r_fname_array
-
   ; Exit ENVI Classic
   ENVI_BATCH_EXIT
 END
